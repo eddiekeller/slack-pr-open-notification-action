@@ -72,76 +72,77 @@ if (makePretty) {
 }
 else if (makeCompact) {
     var message = {
-        Content: [
-            {
-                type: "section",
-                block_id: "commit_title",
-                text: {
-                    type: "mrkdwn",
-                    text: "*<" + prUrl + "|" + prTitle + ">* #" + prNum + " from *" + baseBranchText + "* to *" + compareBranchText + "*." + sendHereMention
-                }
-            },
-            {
-                type: "context",
-                block_id: "committer_meta",
-                elements: [
-                    {
-                        type: "image",
-                        image_url: authorIconUrl,
-                        alt_text: "images"
-                    },
-                    {
-                        type: "mrkdwn",
-                        text: "*" + authorName + "*"
-                    }
-                ]
-            }
-        ]
-    };
-    axios_1["default"].post(url, message);
-}
-else {
-    var message = {
-        Content: [
-            {
-                type: "section",
-                text: {
-                    type: "mrkdwn",
-                    text: sendHereMention + "*<" + prUrl + "|" + prTitle + ">*"
-                },
-                accessory: {
-                    type: "image",
-                    image_url: authorIconUrl,
-                    alt_text: "github icon"
-                },
-                fields: [
-                    {
-                        type: "mrkdwn",
-                        text: "*Author*\n" + authorName
-                    },
-                    {
-                        type: "mrkdwn",
-                        text: "*Base branch*\n" + baseBranchText
-                    },
-                    {
-                        type: "mrkdwn",
-                        text: "*Pull request number*\n#" + prNum
-                    },
-                    {
-                        type: "mrkdwn",
-                        text: "*Compare branch*\n" + compareBranchText
-                    },
-                ]
-            },
-            {
-                type: "section",
-                text: {
-                    type: "plain_text",
-                    text: prBody,
-                    emoji: true
-                }
-            },
-        ]
+        Content: "new PR submitted!" + prUrl
+//         Content: [
+//             {
+//                 type: "section",
+//                 block_id: "commit_title",
+//                 text: {
+//                     type: "mrkdwn",
+//                     text: "*<" + prUrl + "|" + prTitle + ">* #" + prNum + " from *" + baseBranchText + "* to *" + compareBranchText + "*." + sendHereMention
+//                 }
+//             },
+//             {
+//                 type: "context",
+//                 block_id: "committer_meta",
+//                 elements: [
+//                     {
+//                         type: "image",
+//                         image_url: authorIconUrl,
+//                         alt_text: "images"
+//                     },
+//                     {
+//                         type: "mrkdwn",
+//                         text: "*" + authorName + "*"
+//                     }
+//                 ]
+//             }
+//         ]
+//     };
+//     axios_1["default"].post(url, message);
+// }
+// else {
+//     var message = {
+//         Content: [
+//             {
+//                 type: "section",
+//                 text: {
+//                     type: "mrkdwn",
+//                     text: sendHereMention + "*<" + prUrl + "|" + prTitle + ">*"
+//                 },
+//                 accessory: {
+//                     type: "image",
+//                     image_url: authorIconUrl,
+//                     alt_text: "github icon"
+//                 },
+//                 fields: [
+//                     {
+//                         type: "mrkdwn",
+//                         text: "*Author*\n" + authorName
+//                     },
+//                     {
+//                         type: "mrkdwn",
+//                         text: "*Base branch*\n" + baseBranchText
+//                     },
+//                     {
+//                         type: "mrkdwn",
+//                         text: "*Pull request number*\n#" + prNum
+//                     },
+//                     {
+//                         type: "mrkdwn",
+//                         text: "*Compare branch*\n" + compareBranchText
+//                     },
+//                 ]
+//             },
+//             {
+//                 type: "section",
+//                 text: {
+//                     type: "plain_text",
+//                     text: prBody,
+//                     emoji: true
+//                 }
+//             },
+//         ]
     };
     axios_1["default"].post(url, message);
 }
