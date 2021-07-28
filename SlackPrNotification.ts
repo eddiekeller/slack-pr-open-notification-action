@@ -102,46 +102,47 @@ if (makePretty) {
     axios.post(url, message);
 } else {
     const message: Object = {
-        Content: [
-            {
-                type: "section",
-                text: {
-                    type: "mrkdwn",
-                    text: sendHereMention + "*<" + prUrl + "|" + prTitle + ">*",
-                },
-                accessory: {
-                    type: "image",
-                    image_url: authorIconUrl,
-                    alt_text: "github icon",
-                },
-                fields: [
-                    {
-                        type: "mrkdwn",
-                        text: "*Author*\n" + authorName,
-                    },
-                    {
-                        type: "mrkdwn",
-                        text: "*Base branch*\n" + baseBranchText,
-                    },
-                    {
-                        type: "mrkdwn",
-                        text: "*Pull request number*\n#" + prNum,
-                    },
-                    {
-                        type: "mrkdwn",
-                        text: "*Compare branch*\n" + compareBranchText,
-                    },
-                ],
-            },
-            {
-                type: "section",
-                text: {
-                    type: "plain_text",
-                    text: prBody,
-                    emoji: true,
-                },
-            },
-        ]
+        Content: "new PR submitted!" + prUrl
+//         [
+//             {
+//                 type: "section",
+//                 text: {
+//                     type: "mrkdwn",
+//                     text: sendHereMention + "*<" + prUrl + "|" + prTitle + ">*",
+//                 },
+//                 accessory: {
+//                     type: "image",
+//                     image_url: authorIconUrl,
+//                     alt_text: "github icon",
+//                 },
+//                 fields: [
+//                     {
+//                         type: "mrkdwn",
+//                         text: "*Author*\n" + authorName,
+//                     },
+//                     {
+//                         type: "mrkdwn",
+//                         text: "*Base branch*\n" + baseBranchText,
+//                     },
+//                     {
+//                         type: "mrkdwn",
+//                         text: "*Pull request number*\n#" + prNum,
+//                     },
+//                     {
+//                         type: "mrkdwn",
+//                         text: "*Compare branch*\n" + compareBranchText,
+//                     },
+//                 ],
+//             },
+//             {
+//                 type: "section",
+//                 text: {
+//                     type: "plain_text",
+//                     text: prBody,
+//                     emoji: true,
+//                 },
+//             },
+//         ]
     };
     axios.post(url, message);
 }
