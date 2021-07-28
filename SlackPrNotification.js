@@ -19,7 +19,19 @@ var baseBranchText = prFromFork === "true" ? baseBranchOwner + ":" + baseBranchN
 var makePretty = process.env.MAKE_PRETTY ? process.env.MAKE_PRETTY.toLowerCase() === "true" : false; //Priority is pretty > compact > normal
 var makeCompact = process.env.MAKE_COMPACT ? process.env.MAKE_COMPACT.toLowerCase() === "true" : false;
 
-var message = {
+var data = {
     Content: "new PR submitted!" + prUrl
 };
-axios_1["default"].post(url, message);
+try {
+    const request = {
+        url,
+        method: 'post',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        data,
+    };
+    axios_1["default"].request(request);
+} catch(err) {
+    console.log(err);
+}
