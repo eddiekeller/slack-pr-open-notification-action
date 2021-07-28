@@ -20,7 +20,7 @@ var makePretty = process.env.MAKE_PRETTY ? process.env.MAKE_PRETTY.toLowerCase()
 var makeCompact = process.env.MAKE_COMPACT ? process.env.MAKE_COMPACT.toLowerCase() === "true" : false;
 if (makePretty) {
     var message = {
-        attachments: [
+        Content: [
             {
                 color: "#00ff00",
                 blocks: [
@@ -72,7 +72,7 @@ if (makePretty) {
 }
 else if (makeCompact) {
     var message = {
-        blocks: [
+        Content: [
             {
                 type: "section",
                 block_id: "commit_title",
@@ -102,7 +102,7 @@ else if (makeCompact) {
 }
 else {
     var message = {
-        blocks: [
+        Content: [
             {
                 type: "section",
                 text: {
