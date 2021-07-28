@@ -22,7 +22,7 @@ const makeCompact: boolean = process.env.MAKE_COMPACT.toLowerCase() === "true";
 
 if (makePretty) {
     const message: Object = {
-        attachments: [
+        Content: [
             {
                 color: "#00ff00",
                 blocks: [
@@ -73,7 +73,7 @@ if (makePretty) {
     axios.post(url, message);
 } else if (makeCompact) {
     const message: Object = {
-        blocks: [
+        Content: [
             {
                 type: "section",
                 block_id: "commit_title",
@@ -102,7 +102,7 @@ if (makePretty) {
     axios.post(url, message);
 } else {
     const message: Object = {
-        blocks: [
+        Content: [
             {
                 type: "section",
                 text: {
